@@ -1,0 +1,4 @@
+keras
+PIL
+google.colab
+tensorflow
