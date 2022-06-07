@@ -13,7 +13,7 @@ def welcome():
     st.title('오늘 몇 칼로리?')
     st.subheader('오늘의 식사를 이미지 파일로 업로드 해 주세요.')
     
-    st.image('/content/drive/MyDrive/Colab Notebooks/급식/급식93.jpg',use_column_width=True)
+    st.image('급식93.svg',use_column_width=True)
 
     st.subheader('성인 하루 권장 칼로리는')
     col1, col2 = st.columns(2)
@@ -35,7 +35,7 @@ def photo():
 
 
       try:
-        model2= keras.models.load_model("/content/keras_model.h5")
+        model2= keras.models.load_model("keras_model.h5")
         data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
 
         image = image
@@ -95,7 +95,7 @@ def video():
 
 
       try:
-        model2= keras.models.load_model("/content/keras_model.h5")
+        model2= keras.models.load_model("keras_model.h5")
         data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
 
         image = image
