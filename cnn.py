@@ -3,13 +3,6 @@ import numpy as np
 import pandas as pd
 import joblib
 
-import os
-import cv2 
-#from google.colab.patches import cv2_imshow
-import dlib
-
-from skimage import io
-from pathlib import Path
 from keras.models import load_model
 from PIL import Image, ImageOps
 from google.colab import files
