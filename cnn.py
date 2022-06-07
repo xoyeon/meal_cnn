@@ -13,7 +13,7 @@ def welcome():
     st.title('오늘 몇 칼로리?')
     st.subheader('오늘의 식사를 이미지 파일로 업로드 해 주세요.')
     
-    st.image('급식93.svg',use_column_width=True)
+    st.image('/content/drive/MyDrive/Colab Notebooks/급식/급식93.jpg',use_column_width=True)
 
     st.subheader('성인 하루 권장 칼로리는')
     col1, col2 = st.columns(2)
@@ -27,16 +27,15 @@ def photo():
     st.title('식사를 보여주세요')
     uploaded_file = st.file_uploader("이미지파일선택",type = ["jpg","png","jpeg"])
     
-    try:
-      if uploaded_file is not None:
-        image = Image.open(uploaded_file)
-        st.image(image, caption='선택된 이미지.', use_column_width=True)
-        st.write("")
-        st.write("어떤 종류의 밥일까요?")
+    if uploaded_file is not None:
+      image = Image.open(uploaded_file)
+      st.image(image, caption='선택된 이미지.', use_column_width=True)
+      st.write("")
+      st.write("어떤 종류의 밥일까요?")
 
 
-
-        model2= keras.models.load_model("keras_model.h5")
+      try:
+        model2= keras.models.load_model("/content/keras_model.h5")
         data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
 
         image = image
@@ -76,7 +75,7 @@ def photo():
 
         st.write("오늘 내가 먹은 밥은?: "+ result1)
       
-    except:
+      except:
         st.error('밥 사진을 다시 올려주세요.')
 
 
@@ -86,7 +85,7 @@ def photo():
 def video():
     st.title('사진촬영')
     img_file_buffer = st.camera_input("오늘도 잊지말고 기록해주세요!")
-
+    
     try:
       if uploaded_file is not None:
         image = Image.open(uploaded_file)
@@ -95,8 +94,8 @@ def video():
         st.write("어떤 종류의 밥일까요?")
 
 
-
-        model2= keras.models.load_model("keras_model.h5")
+      try:
+        model2= keras.models.load_model("/content/keras_model.h5")
         data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
 
         image = image
@@ -136,9 +135,10 @@ def video():
 
         st.write("오늘 내가 먹은 밥은?: "+ result1)
       
-    except:
+      except:
         st.error('밥 사진을 다시 올려주세요.')
-
+    except:
+      st.write('사진을 촬영해주세요.')
 
 selected_box = st.sidebar.selectbox('오늘도 잊지말고 기록해주세요',('원하시는 방식을 선택해주세요','사진업로드', '사진촬영'))
     
