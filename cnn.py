@@ -13,7 +13,7 @@ def welcome():
     st.title('오늘 몇 칼로리?')
     st.subheader('오늘의 식사를 이미지 파일로 업로드 해 주세요.')
     
-    st.image('급식93.svg',use_column_width=True)
+    st.image('급식93.svg',use_column_width=True)
 
     st.subheader('성인 하루 권장 칼로리는')
     col1, col2 = st.columns(2)
