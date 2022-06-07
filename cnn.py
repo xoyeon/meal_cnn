@@ -6,7 +6,6 @@ import joblib
 
 from keras.models import load_model
 from PIL import Image, ImageOps
-from google.colab import files
 from keras.preprocessing import image
 from tensorflow import keras
 
