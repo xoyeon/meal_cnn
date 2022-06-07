@@ -8,3 +8,6 @@ ptyprocess
 seaborn
 streamlit
 scikit-learn
+
+keras
+tensorflow
