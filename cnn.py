@@ -12,7 +12,7 @@ def welcome():
     st.title('오늘 몇 칼로리?')
     st.subheader('오늘의 식사를 이미지 파일로 업로드 해 주세요.')
     
-    st.image('급식93.jpg',use_column_width=True)
+    st.image('/급식93.jpg',use_column_width=True)
 
 
 def photo():
