@@ -1,4 +1,4 @@
-# 오늘 몇 칼로리?
+# CNN 알고리즘을 활용한 음식 칼로리 계산 서비스
 🍚 [Streamlit실행하기](https://share.streamlit.io/xoyeon/meal_cnn/main/cnn.py)
 
 ![image](https://user-images.githubusercontent.com/85726134/213905089-f0a41b7d-6d5f-41c9-8c8a-89b430e199f1.png)
